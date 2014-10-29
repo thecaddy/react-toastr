@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/opt/nvm/v0.10.32/bin/node',
+1 verbose cli   '/usr/local/opt/nvm/v0.10.32/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/opt/nvm/v0.10.32/bin/node
+5 verbose run-script [ 'predev', 'dev', 'postdev' ]
+6 info predev react-toastr@1.0.0
+7 info dev react-toastr@1.0.0
+8 verbose unsafe-perm in lifecycle true
+9 info react-toastr@1.0.0 Failed to exec dev script
+10 error react-toastr@1.0.0 dev: `webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public`
+10 error Exit status 8
+11 error Failed at the react-toastr@1.0.0 dev script.
+11 error This is most likely a problem with the react-toastr package,
+11 error not with npm itself.
+11 error Tell the author that this fails on your system:
+11 error     webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public
+11 error You can get their info via:
+11 error     npm owner ls react-toastr
+11 error There is likely additional logging output above.
+12 error System Darwin 14.0.0
+13 error command "/usr/local/opt/nvm/v0.10.32/bin/node" "/usr/local/opt/nvm/v0.10.32/bin/npm" "run" "dev"
+14 error cwd /Users/tomchentw/Dropbox/Git/react-toastr
+15 error node -v v0.10.32
+16 error npm -v 1.4.28
+17 error code ELIFECYCLE
+18 verbose exit [ 1, true ]
