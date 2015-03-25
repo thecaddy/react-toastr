@@ -4,57 +4,39 @@ var {PropTypes} = React;
 var {update} = React.addons;
 var {classSet} = React.addons;
 
+var constants = require("./Constants");
+
 var ToastMessage = React.createFactory(require("./ToastMessage"));
 
 function noop () {}
-
-var toastTypes = {
-  error: "error",
-  info: "info",
-  success: "success",
-  warning: "warning"
-};
-
-var toastHorizontalPositions = {
-  left: "left",
-  right: "right",
-  full: "full-width",
-  center: "center"
-};
-
-var toastVerticalPositions = {
-  top: "top",
-  bottom: "bottom"
-};
 
 module.exports = React.createClass({
   displayName: "ToastContainer",
 
   propTypes: {
-    type: PropTypes.oneOf(Object.keys(toastTypes)).isRequired,
     toastMessageFactory: PropTypes.object.isRequired,
     preventDuplicates: PropTypes.bool,
     onClick: PropTypes.func,
     toastPosition: PropTypes.shape({
-      horizontal: PropTypes.oneOf(Object.keys(toastHorizontalPositions)),
-      vertical: PropTypes.oneOf(Object.keys(toastVerticalPositions))
+      horizontal: PropTypes.oneOf(Object.keys(constants.toastHorizontalPositions)),
+      vertical: PropTypes.oneOf(Object.keys(constants.toastVerticalPositions))
     }).isRequired
   },
 
   error (message, title, optionsOverride) {
-    this._notify(toastTypes.error, message, title, optionsOverride);
+    this._notify(constants.toastTypes.error, message, title, optionsOverride);
   },
 
   info (message, title, optionsOverride) {
-    this._notify(toastTypes.info, message, title, optionsOverride);
+    this._notify(constants.toastTypes.info, message, title, optionsOverride);
   },
 
   success (message, title, optionsOverride) {
-    this._notify(toastTypes.success, message, title, optionsOverride);
+    this._notify(constants.toastTypes.success, message, title, optionsOverride);
   },
 
   warning (message, title, optionsOverride) {
-    this._notify(toastTypes.warning, message, title, optionsOverride);
+    this._notify(constants.toastTypes.warning, message, title, optionsOverride);
   },
 
   clear () {
@@ -72,8 +54,8 @@ module.exports = React.createClass({
       newestOnTop: true,
       onClick: noop,
       toastPosition: {
-        horizontal: toastHorizontalPositions.right,
-        vertical: toastVerticalPositions.top
+        horizontal: constants.toastHorizontalPositions.right,
+        vertical: constants.toastVerticalPositions.top
       }
     };
   },

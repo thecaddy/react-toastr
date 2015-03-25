@@ -1,23 +1,25 @@
 "use strict";
 var React = require("react/addons");
+var {PropTypes} = React;
 var {update} = React.addons;
+var constants = require('../Constants');
 
 function noop () {}
 
 var ToastMessageSpec = {
   displayName: "ToastMessage",
 
-  getDefaultProps () {
-    var iconClassNames = {
-      error: "toast-error",
-      info: "toast-info",
-      success: "toast-success",
-      warning: "toast-warning"
-    };
+  propTypes: {
+    type: PropTypes.oneOf(Object.keys(constants.toastTypes)).isRequired,
+    iconClassName: PropTypes.string,
+    messageClassName: PropTypes.string,
+    titleClassName: PropTypes.string,
+    tapToDismiss: PropTypes.bool,
+    closeButton: PropTypes.bool
+  },
 
+  getDefaultProps () {
     return {
-      className: "toast",
-      iconClassNames: iconClassNames,
       titleClassName: "toast-title",
       messageClassName: "toast-message",
       tapToDismiss: true,
@@ -69,10 +71,16 @@ var ToastMessageSpec = {
   render () {
     var cx = React.addons.classSet;
     var {props} = this;
-    var iconClassName = props.iconClassName || props.iconClassNames[props.type];
+    var iconClassName = props.iconClassName || constants.iconClassNames[props.type];
 
-    var toastClass = {};
-    toastClass[props.className] = true;
+    var toastClass = {
+      "toast": true
+    };
+
+    if (props.className) {
+      toastClass[props.className] = true;
+    }
+
     toastClass[iconClassName] = true;
 
     return (
