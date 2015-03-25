@@ -18,8 +18,13 @@ var Body = React.createClass({
   },
 
   render: function() {
+    var toastPosition = {
+      horizontal: "right",
+      vertical: "top"
+    };
+
     return <div id="react-root">
-      <ToastContainer toastMessageFactory={ToastMessageFactory} ref="container" className="toast-top-right" />
+      <ToastContainer toastMessageFactory={ToastMessageFactory} ref="container" toastPosition={toastPosition} />
 
       <h1>
         React-Toastr
