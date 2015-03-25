@@ -1,4 +1,4 @@
-# react-toastr [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
+# react-toastr-redux [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 > React.js toastr component
 
 [![Version][npm-image]][npm-url]
@@ -16,13 +16,12 @@ Please refer to [client][client] folder for example.
 
 ## Usage
 
-This module requires to be bundled with [webpack][webpack]/browserify and loads `react/addons` internally.  
-WIP: release a UMD version via bower/components.
+`npm install react-toastr-redux`
 
 Then:
 
 ```javascript
-var ReactToastr = require("react-toastr");
+var ReactToastr = require("react-toastr-redux");
 var {ToastContainer} = ReactToastr; // This is a React Element.
 var ToastMessageFactory = React.createFactory(ReactToastr.ToastMessage.jQuery);
 
